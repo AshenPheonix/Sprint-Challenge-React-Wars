@@ -2,8 +2,9 @@
     padding:.5rem;
     text-align: left;
     background-color:white;
-    margin:1rem;
+    margin:1rem auto;
     border:black 1px solid;
+    width:900px;
 }
 
 .character li{
@@ -35,6 +36,8 @@ nav{
     display: flex;
     justify-content: space-between;
     padding:.5rem 1rem;
+    width:1000px;
+    margin:auto;
 }
 
 .available{
