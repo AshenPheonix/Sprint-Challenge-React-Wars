@@ -1,0 +1,26 @@
+.character{
+    padding:.5rem;
+    text-align: left;
+    background-color:white;
+    margin:1rem;
+    border:black 1px solid;
+}
+
+.character li{
+    list-style-type: circle;
+    padding:.25rem;
+    border-top:solid black 2px;
+    border-bottom:solid black 2px;
+    width:450px;
+}
+
+.character li:nth-child(even){
+    background-color: lightgray;
+}
+.character li:hover{
+    border:2px gray inset;
+}
+
+.character fieldset{
+    border:3px groove darkgray;
+}
