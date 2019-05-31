@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import './App.css';
 import StarwarsChars from './components/starwarsChars'
+import Navigation from './components/Navigation'
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      starwarsChars: []
+      starwarsChars: [],
+      next:'',
+      prev:'',
+      init:0
     };
   }
 
@@ -23,8 +27,12 @@ class App extends Component {
         return res.json();
       })
       .then(data => {
-        console.log(data);
-        this.setState({ starwarsChars: data.results });
+        let stat=0
+        if(data.previous)
+          stat+=2
+        if(data.next)
+          stat++
+        this.setState({ starwarsChars: data.results,next:data.next,prev:data.previous,init:stat });
       })
       .catch(err => {
         throw new Error(err);
@@ -35,11 +43,25 @@ class App extends Component {
     return (
       <div className="App">
         <h1 className="Header">React Wars</h1>
+        <Navigation
+          init={this.state.init}
+          prev={this.prev}
+          next={this.next}
+        />
         <StarwarsChars
           chars={this.state.starwarsChars}
         />
       </div>
     );
+  }
+
+  next=()=>{
+    if(this.state.next)
+      this.getCharacters(this.state.next)
+  }
+  prev=()=>{
+    if(this.state.prev)
+      this.getCharacters(this.state.prev)
   }
 }
 

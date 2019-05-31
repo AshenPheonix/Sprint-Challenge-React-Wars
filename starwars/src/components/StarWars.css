@@ -26,3 +26,20 @@
 .character fieldset{
     border:3px groove darkgray;
 }
+
+nav{
+    position: sticky;
+    top:0px;
+    background-color: black;
+    color:white;
+    display: flex;
+    justify-content: space-between;
+    padding:.5rem 1rem;
+}
+
+.available{
+    text-decoration: underline;
+}
+.available:hover{
+    cursor: pointer;
+}
