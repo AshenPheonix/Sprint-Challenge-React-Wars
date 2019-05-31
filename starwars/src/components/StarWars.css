@@ -8,10 +8,8 @@
 
 .character li{
     list-style-type: circle;
-    padding:.25rem;
-    border-top:solid black 2px;
-    border-bottom:solid black 2px;
     width:450px;
+    padding:5px;
 }
 
 .character li:nth-child(even){
@@ -19,6 +17,10 @@
 }
 .character li:hover{
     border:2px gray inset;
+    border-right:0;
+    border-left:0;
+    box-shadow: inset lightgray 2px 2px 2px;
+    padding:3px 5px;
 }
 
 .character fieldset{
