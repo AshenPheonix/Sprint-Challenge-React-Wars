@@ -3,7 +3,7 @@ import './StarWars.css'
 import StarwarsChar from './StarwarsChar'
 
 export default function StarwarsCharacters(props) {
-    console.log(props)
+    
     return (
         <section
             className="char-list"

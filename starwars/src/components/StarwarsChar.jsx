@@ -19,7 +19,7 @@ export default function StarwarsChar(props) {
             <section
                 className="statBlock"
             >
-                <p>Height: {height}</p>
+                <p>Height: {height}cm</p>
                 <p>Mass: {mass}kg</p>
             </section>
             <fieldset>
@@ -27,9 +27,10 @@ export default function StarwarsChar(props) {
                     Films
                 </legend>
                 <ul>
-                    {filmsIn.map(film=>
+                    {filmsIn.map((film,i)=>
                         <Film
                             filmURL={film}
+                            key={i}
                         />
                     )}
                 </ul>
