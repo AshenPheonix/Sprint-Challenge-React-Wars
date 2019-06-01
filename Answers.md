@@ -2,7 +2,7 @@
 
 1.  What is React JS and what problems does it try and solve?
 
-    React JS is a js library built to handle the creation, addition, and manipulation of javascript components and provide a seamless, or as close to seamless as possible, interaction between the end users and a database
+    React JS is a js library built to handle the creation, addition, and manipulation of javascript components and provide a seamless, or as close to seamless, as possible, interaction between the end users and a database
 
 1.  What does it mean to _think_ in react?
 

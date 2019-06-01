@@ -1,20 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import remote from './js/Service'
+import Controller from './components/GoggieList'
 
 export default class App extends React.Component {
   constructor(props) {
     super(props)
     this.fetcher=new remote();
     this.state={
-      goggiesList:[]
+      goggiesList:["Loading"]
     }
   }
 
   fetchDoggies=async ()=>{
     let temp=await this.fetcher.grabAll()
-    console.log(temp.message);
+    temp=temp.message
+    let arr= []
+    for(let key in temp){
+      if(temp.hasOwnProperty(key) && !Array.isArray(temp[key]))
+        arr.push(key)
+      else if(temp.hasOwnProperty(key) && Array.isArray(temp[key])){
+        temp[key].forEach(sub=>arr.push(`${sub} ${key}`))
+      }
+    }
+    this.setState({goggiesList:arr})
   }
 
   
@@ -26,20 +35,7 @@ export default class App extends React.Component {
   render(){
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Controller list={this.state.goggiesList}/>
       </div>
     )
   }
