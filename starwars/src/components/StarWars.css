@@ -1,0 +1,48 @@
+.character{
+    padding:.5rem;
+    text-align: left;
+    background-color:white;
+    margin:1rem auto;
+    border:black 1px solid;
+    width:900px;
+}
+
+.character li{
+    list-style-type: circle;
+    width:450px;
+    padding:5px;
+}
+
+.character li:nth-child(even){
+    background-color: lightgray;
+}
+.character li:hover{
+    border:2px gray inset;
+    border-right:0;
+    border-left:0;
+    box-shadow: inset lightgray 2px 2px 2px;
+    padding:3px 5px;
+}
+
+.character fieldset{
+    border:3px groove darkgray;
+}
+
+nav{
+    position: sticky;
+    top:0px;
+    background-color: black;
+    color:white;
+    display: flex;
+    justify-content: space-between;
+    padding:.5rem 1rem;
+    width:1000px;
+    margin:auto;
+}
+
+.available{
+    text-decoration: underline;
+}
+.available:hover{
+    cursor: pointer;
+}
